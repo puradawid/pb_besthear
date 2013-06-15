@@ -1,0 +1,15 @@
+<local:MainWindow title="BestHear App" maximized="true"
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:local="besthear"
+    xmlns="org.apache.pivot.wtk"
+    styles="{width: 100}"
+    preferredWidth="100" preferredHeight="200">
+    <BoxPane orientation="vertical" styles="{padding:4, verticalAlignment:'center', horizontalAlignment:'center'}">
+         <Label bxml:id="freq" styles="{font:'Arial bold 40', color:'green'}" text="Freq"/>
+         <BoxPane>
+            <PushButton bxml:id="storeFrequency" buttonData="Rec"/>
+            <PushButton bxml:id="playFrequency" buttonData="play stored" />
+         </BoxPane>
+    </BoxPane>
+</local:MainWindow>
