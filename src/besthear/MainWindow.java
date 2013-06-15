@@ -18,7 +18,10 @@ import org.apache.pivot.wtk.Alert;
 import org.apache.pivot.wtk.ApplicationContext;
 import org.apache.pivot.wtk.Button;
 import org.apache.pivot.wtk.ButtonPressListener;
+import org.apache.pivot.wtk.Dialog;
 import org.apache.pivot.wtk.Label;
+import org.apache.pivot.wtk.Menu;
+import org.apache.pivot.wtk.MenuBar;
 import org.apache.pivot.wtk.MessageType;
 import org.apache.pivot.wtk.PushButton;
 import org.apache.pivot.wtk.Window;
@@ -29,6 +32,8 @@ import org.apache.pivot.wtk.Window;
  */
 public class MainWindow extends Window implements Bindable{
     
+    public static Window instance;
+    
     @BXML
     PushButton storeFrequency;
     
@@ -37,6 +42,12 @@ public class MainWindow extends Window implements Bindable{
     
     @BXML
     Label freq;
+    
+    @BXML
+    Menu.Item settingsButton;
+    
+    @BXML
+    Menu.Item melodyEditorButton;
     
     int frequency = 440;
     
@@ -50,10 +61,28 @@ public class MainWindow extends Window implements Bindable{
     
     @Override
     public void initialize(Map<String, Object> map, URL url, Resources rsrcs) {
+        instance = this;
         this.setSize(100, 200);
         fr = new FrequencyRefresher(freq, BestHear.fm, this);
         
+        //settingsButton.setEnabled(true);
+        
         StyleDictionary s = freq.getStyles();
+        
+        settingsButton.getButtonPressListeners().add(new ButtonPressListener(){
+            @Override
+            public void buttonPressed(Button button)
+            {
+              BestHear.settingsWindow.open(MainWindow.instance);
+            }
+        });
+        melodyEditorButton.getButtonPressListeners().add(new ButtonPressListener(){
+            @Override
+            public void buttonPressed(Button button)
+            {
+              BestHear.melodyEditorWindow.open(MainWindow.instance);
+            }
+        });
         storeFrequency.getButtonPressListeners().add(new ButtonPressListener(){
             @Override
             public void buttonPressed(Button button)
@@ -72,7 +101,7 @@ public class MainWindow extends Window implements Bindable{
                 if(swg == null)
                 {
                 swg = new SinusWaveGenerator(0, Short.MAX_VALUE, 16384);
-                byte[] stream = swg.produceSamples(frequency, 1);
+                byte[] stream = swg.produceSamples(frequency, BestHear.amplitude);
                 pb = new Playback(format, stream);
                 pb.startSound();
                 } else

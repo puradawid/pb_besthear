@@ -1,15 +1,39 @@
-<local:MainWindow title="BestHear App" maximized="true"
+<local:MainWindow title="BestHear App"
     xmlns:bxml="http://pivot.apache.org/bxml"
     xmlns:content="org.apache.pivot.wtk.content"
     xmlns:local="besthear"
     xmlns="org.apache.pivot.wtk"
     styles="{width: 100}"
-    preferredWidth="100" preferredHeight="200">
-    <BoxPane orientation="vertical" styles="{padding:4, verticalAlignment:'center', horizontalAlignment:'center'}">
+    preferredWidth="500" preferredHeight="500">
+    <!-- Menu injection -->
+    <BoxPane orientation="vertical">
+        <MenuBar>
+            <MenuBar.Item buttonData="Menu">
+                <Menu>
+                    <Menu.Section>
+                        <Menu.Item bxml:id="melodyEditorButton">
+                            <buttonData>
+                                <content:MenuItemData text="Melody Editor"/>
+                            </buttonData>
+                        </Menu.Item>
+                        <Menu.Item bxml:id="settingsButton">
+                            <buttonData><content:MenuItemData text="Settings"/></buttonData>
+                        </Menu.Item>
+                        <Menu.Item>
+                            <buttonData><content:MenuItemData text="About"/></buttonData>
+                        </Menu.Item>
+                    </Menu.Section>
+                </Menu>
+            </MenuBar.Item>
+        </MenuBar>
+    
+
+    <BoxPane orientation="vertical" preferredWidth="500" preferredHeight="300" styles="{padding:4, verticalAlignment:'center', horizontalAlignment:'center'}">
          <Label bxml:id="freq" styles="{font:'Arial bold 40', color:'green'}" text="Freq"/>
          <BoxPane>
             <PushButton bxml:id="storeFrequency" buttonData="Rec"/>
             <PushButton bxml:id="playFrequency" buttonData="play stored" />
          </BoxPane>
+    </BoxPane>
     </BoxPane>
 </local:MainWindow>

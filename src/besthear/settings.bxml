@@ -1,0 +1,12 @@
+<local:SettingsWindow title="BestHear App - settings" modal="false"
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:local="besthear"
+    xmlns="org.apache.pivot.wtk"
+    styles="{width: 100}"
+    preferredWidth="200" preferredHeight="60">
+    <BoxPane preferredWidth="200" preferredHeight="60" styles="{padding:4, verticalAlignment:'center', horizontalAlignment:'center'}">
+        <Slider bxml:id="amplitudeSlider" width="20" range="{start:0, end:100}"/>
+        <Label bxml:id="label" text="Amplitude"/>
+    </BoxPane>
+</local:SettingsWindow>

@@ -1,0 +1,12 @@
+<local:MelodyEditorWindow title="BestHear App - settings" modal="false"
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:local="besthear"
+    xmlns="org.apache.pivot.wtk"
+    styles="{width: 100}"
+    preferredWidth="300" preferredHeight="200">
+    <BoxPane preferredWidth="200" orientation="vertical" preferredHeight="50" styles="{padding:4, verticalAlignment:'center', horizontalAlignment:'center'}">
+        <TextArea bxml:id="melodyInputText"/>
+        <PushButton bxml:id="playMelodyButton" buttonData="Play Melody!" />
+    </BoxPane>
+</local:MelodyEditorWindow>
