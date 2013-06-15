@@ -1,0 +1,11 @@
+<local:AboutWindow title="About" modal="true"
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:local="besthear"
+    xmlns="org.apache.pivot.wtk"
+    styles="{width: 100}"
+    preferredWidth="300" preferredHeight="120">
+    <BoxPane preferredWidth="200" orientation="vertical" styles="{padding:4, verticalAlignment:'center', horizontalAlignment:'center'}">
+        <TextArea bxml:id="text"/> 
+    </BoxPane>
+</local:AboutWindow>

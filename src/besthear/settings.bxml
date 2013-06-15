@@ -1,4 +1,4 @@
-<local:SettingsWindow title="BestHear App - settings" modal="false"
+<local:SettingsWindow title="Settings" modal="false"
     xmlns:bxml="http://pivot.apache.org/bxml"
     xmlns:content="org.apache.pivot.wtk.content"
     xmlns:local="besthear"

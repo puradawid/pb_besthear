@@ -19,7 +19,7 @@
                         <Menu.Item bxml:id="settingsButton">
                             <buttonData><content:MenuItemData text="Settings"/></buttonData>
                         </Menu.Item>
-                        <Menu.Item>
+                        <Menu.Item bxml:id="aboutButton">
                             <buttonData><content:MenuItemData text="About"/></buttonData>
                         </Menu.Item>
                     </Menu.Section>

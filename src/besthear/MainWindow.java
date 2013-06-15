@@ -47,6 +47,9 @@ public class MainWindow extends Window implements Bindable{
     Menu.Item settingsButton;
     
     @BXML
+    Menu.Item aboutButton;
+    
+    @BXML
     Menu.Item melodyEditorButton;
     
     int frequency = 440;
@@ -83,6 +86,16 @@ public class MainWindow extends Window implements Bindable{
               BestHear.melodyEditorWindow.open(MainWindow.instance);
             }
         });
+        
+        aboutButton.getButtonPressListeners().add(new ButtonPressListener(){
+            @Override
+            public void buttonPressed(Button button)
+            {
+              BestHear.aboutWindow.open(MainWindow.instance);
+            }
+        });
+        
+        
         storeFrequency.getButtonPressListeners().add(new ButtonPressListener(){
             @Override
             public void buttonPressed(Button button)

@@ -33,6 +33,7 @@ public class BestHear implements Application {
     public static double amplitude = 1.0;
     public static Dialog settingsWindow;
     public static Dialog melodyEditorWindow;
+    public static Dialog aboutWindow;
     
     public static void main(String[] args) {
         DesktopApplicationContext.main(BestHear.class, args);
@@ -46,6 +47,7 @@ public class BestHear implements Application {
         window.open(dspl);
         settingsWindow = (Dialog)bxmlSerializer.readObject(BestHear.class, "settings.bxml");
         melodyEditorWindow = (Dialog)bxmlSerializer.readObject(BestHear.class, "melodyEditor.bxml");
+        aboutWindow = (Dialog)bxmlSerializer.readObject(BestHear.class, "about.bxml");
         fm.start();
     }
     
