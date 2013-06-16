@@ -50,10 +50,10 @@ public class MelodyEditorWindow extends Dialog implements Bindable{
                 String input = MelodyEditorWindow.melodyNotes.getText();
                 MelodyEditorWindow.tnp.changeSequency(TextNoteParsed.parseWholeString(input));
                 (new Thread(MelodyEditorWindow.tnp)).start();
-                try {
-                 Thread.sleep(tnp.timeOfPlay());
-                } catch (InterruptedException ex) {
-                }
+//                try {
+//                 Thread.sleep(tnp.timeOfPlay());
+//                } catch (InterruptedException ex) {
+//                }
             }
             
         });
